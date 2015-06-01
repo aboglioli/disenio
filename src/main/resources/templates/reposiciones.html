@@ -5,6 +5,7 @@
         <title>Reposiciones</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/css/bootstrap.min.css" rel="stylesheet">        
         <script type="text/javascript" src="/js/jquery-1.11.3.min.js"></script>
         
         <script type="text/javascript">
@@ -19,36 +20,48 @@
         
     </head>
     <body>
-        Elegir la reposici&oacute;n deseada:
-        <select id="reposiciones">
-            {{#reposiciones}}
-            <option value="{{numero}}">{{numero}}&nbsp;{{estadoReposicion.nombre}}</option>
-            {{/reposiciones}}
-        </select>
-        
-        <button id="mostrarReposicion">Mostrar</button>
-
-        {{#reposicionArticulos}}
-        <table>
-            <thead>
-                <th>Art&iacute;culo</th>
-                <th>Cantidad</th>
-                <th>Promedio de Venta</th>
-                <th>Total Pedido Pendiente</th>
-                <th>Stock Disponible</th>               
-            </thead>
-            {{#reposicionArticulos}}
-            <tbody>
-                <tr>
-                    <td>{{primaryKey.articulo.nombre}}</td>
-                    <td>{{cantidadReposicion}}</td>
-                    <td>{{promedioVenta}}</td>
-                    <td>{{totalPedidoPendiente}}</td>
-                    <td>{{stockDisponible}}</td>
-                </tr>
-            </tbody>
-            {{/reposicionArticulos}}
-        </table>
-        {{/reposicionArticulos}}
+    	<div class="container">
+    		<div class="row">
+		    	<h4>Elegir la reposici&oacute;n deseada:</h4>
+	    		<div class="col-md-8">
+			        <select id="reposiciones" class="form-control">
+			            {{#reposiciones}}
+			            <option value="{{numero}}">{{numero}}&nbsp;{{estadoReposicion.nombre}}</option>
+			            {{/reposiciones}}
+			        </select>
+	    		</div>
+		        <div class="col-md-4">
+			        <button id="mostrarReposicion" class="btn btn-default">Mostrar</button>
+		        </div>	 
+    		</div>    		
+	        {{#reposicionArticulos}}
+	        <br><br>
+	        <div class="row">
+		        <div class="col-md-10">
+			        <table class="table table-stripped">
+			        	<caption>Art&iacute;culos de la reposici&oacute;n</caption>
+			            <thead>
+			                <th>Art&iacute;culo</th>
+			                <th>Cantidad</th>
+			                <th>Promedio de Venta</th>
+			                <th>Total Pedido Pendiente</th>
+			                <th>Stock Disponible</th>               
+			            </thead>
+			            {{#reposicionArticulos}}
+			            <tbody>
+			                <tr>
+			                    <td>{{primaryKey.articulo.nombre}}</td>
+			                    <td>{{cantidadReposicion}}</td>
+			                    <td>{{promedioVenta}}</td>
+			                    <td>{{totalPedidoPendiente}}</td>
+			                    <td>{{stockDisponible}}</td>
+			                </tr>
+			            </tbody>
+			            {{/reposicionArticulos}}
+			        </table>
+		        </div>   
+		        {{/reposicionArticulos}}
+	        </div>
+    	</div>       
     </body>
 </html>

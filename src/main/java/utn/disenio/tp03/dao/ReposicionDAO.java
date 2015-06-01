@@ -26,7 +26,7 @@ public class ReposicionDAO extends GenericDAO<Reposicion> {
     public List<ReposicionArticulo> obtenerReposicionArticulo(Integer idReposicion) {
 
         List<ReposicionArticulo> result = new ArrayList<>();
-         Session session = this.getSession();
+        Session session = this.getSession();
         Transaction transaction = session.beginTransaction();
         Reposicion reposicion = (Reposicion) session.get(Reposicion.class, idReposicion);
         Set<ReposicionArticulo> reposicionArticulos = reposicion.getReposicionArticulos();
