@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Art&iacute;culos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <table>
+            <thead>
+                <th>C&oacute;digo</th>
+                <th>Nombre</th>
+                <th>Cantidad por Pallet</th>
+            </thead>
+            <tbody>
+                {{#articulos}}
+                <tr>
+                    <td>{{codigo}}</td>
+                    <td>{{nombre}}</td>
+                    <td>{{cantidadPallet}}</td>
+                </tr>
+                {{/articulos}}
+            </tbody>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Reposiciones</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="/js/jquery-1.11.3.min.js"></script>
+        
+        <script type="text/javascript">
+            $().ready(function () {
+               $("#mostrarReposicion").click(function () {
+                   numeroReposicion = $("#reposiciones option:selected").val();
+                   window.location.replace("/reposiciones/" + numeroReposicion);
+               }) 
+            });
+        </script>
+                
+        
+    </head>
+    <body>
+        Elegir la reposici&oacute;n deseada:
+        <select id="reposiciones">
+            {{#reposiciones}}
+            <option value="{{numero}}">{{numero}}&nbsp;{{estadoReposicion.nombre}}</option>
+            {{/reposiciones}}
+        </select>
+        
+        <button id="mostrarReposicion">Mostrar</button>
+
+        {{#reposicionArticulos}}
+        <table>
+            <thead>
+                <th>Art&iacute;culo</th>
+                <th>Cantidad</th>
+                <th>Promedio de Venta</th>
+                <th>Total Pedido Pendiente</th>
+                <th>Stock Disponible</th>               
+            </thead>
+            {{#reposicionArticulos}}
+            <tbody>
+                <tr>
+                    <td>{{primaryKey.articulo.nombre}}</td>
+                    <td>{{cantidadReposicion}}</td>
+                    <td>{{promedioVenta}}</td>
+                    <td>{{totalPedidoPendiente}}</td>
+                    <td>{{stockDisponible}}</td>
+                </tr>
+            </tbody>
+            {{/reposicionArticulos}}
+        </table>
+        {{/reposicionArticulos}}
+    </body>
+</html>
