@@ -21,13 +21,13 @@ public class Main {
         Spark.port(PORT);
         Spark.staticFileLocation("/static");
 
-        Spark.get("/articulos", (request, response) -> {
+        Spark.get("/articulo", (request, response) -> {
             List<Articulo> articulos = indireccion.getArticulos();
 
             return makeTemplate("articulos.html", "articulos", articulos);
         }, new MustacheTemplateEngine());
         
-        Spark.get("/articulos/:codigo", (request, response) -> {
+        Spark.get("/articulo/:codigo", (request, response) -> {
             List<Articulo> articulos = null;
             try {
                 Integer codigo = Integer.valueOf(request.params("codigo"));
@@ -41,13 +41,13 @@ public class Main {
 
         }, new MustacheTemplateEngine());
         
-        Spark.get("/marcas", (request, response) -> {
+        Spark.get("/marca", (request, response) -> {
             List<Marca> marcas = indireccion.getMarcas();
             
             return makeTemplate("marcas.html", "marcas", marcas);
         }, new MustacheTemplateEngine());
         
-        Spark.get("/marcas/:codigo", (request, response) -> {
+        Spark.get("/marca/:codigo", (request, response) -> {
             List<Marca> marcas = null;
             try {
                 Integer codigo = Integer.valueOf(request.params("codigo"));
@@ -61,14 +61,14 @@ public class Main {
         }, new MustacheTemplateEngine());
         
         // TipoArticulo
-        Spark.get("/tipo_articulos", (request, response) -> {
+        Spark.get("/tipo_articulo", (request, response) -> {
             List<TipoArticulo> tipoArticulos = indireccion.getTipoArticulos();            
 
             return makeTemplate("tipo_articulos.html", "tipoArticulos", tipoArticulos);
 
         }, new MustacheTemplateEngine());
         
-        Spark.get("/tipo_articulos/:codigo", (request, response) -> {
+        Spark.get("/tipo_articulo/:codigo", (request, response) -> {
             List<TipoArticulo> tipoArticulos = null;
             try {
                 Integer codigo = Integer.valueOf(request.params("codigo"));
@@ -81,7 +81,7 @@ public class Main {
             return makeTemplate("tipo_articulos.html", "tipoArticulos", tipoArticulos);
         }, new MustacheTemplateEngine());
         
-        Spark.get("/articulos/:filtro/:codigo", (request, response) -> {
+        Spark.get("/articulo/:filtro/:codigo", (request, response) -> {
             List<Articulo> articulos = null;
             
             String filtro = request.params("filtro");

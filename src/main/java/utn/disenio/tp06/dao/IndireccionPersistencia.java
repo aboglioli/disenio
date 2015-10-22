@@ -5,7 +5,6 @@
  */
 package utn.disenio.tp06.dao;
 
-import java.util.ArrayList;
 import java.util.List;
 import utn.disenio.tp06.domain.Articulo;
 import utn.disenio.tp06.domain.Marca;
