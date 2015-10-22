@@ -4,15 +4,15 @@
   <session-factory>
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/disenio_tp03</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/disenio_tp06</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">root</property>
     <property name="hibernate.current_session_context_class">thread</property>
     
-    <mapping class="utn.disenio.tp03.domain.Articulo" />
-    <mapping class="utn.disenio.tp03.domain.Reposicion" />
-    <mapping class="utn.disenio.tp03.domain.ReposicionArticulo" />
-    <mapping class="utn.disenio.tp03.domain.EstadoReposicion" />
+    <mapping class="utn.disenio.tp06.domain.Articulo" />
+    <mapping class="utn.disenio.tp06.domain.Reposicion" />
+    <mapping class="utn.disenio.tp06.domain.ReposicionArticulo" />
+    <mapping class="utn.disenio.tp06.domain.EstadoReposicion" />
 
   </session-factory>
   

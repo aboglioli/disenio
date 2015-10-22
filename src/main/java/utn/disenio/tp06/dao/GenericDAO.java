@@ -3,18 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package utn.disenio.tp03.dao;
+package utn.disenio.tp06.dao;
 
-import utn.disenio.tp03.domain.Articulo;
+import java.util.List;
 
 /**
  *
  * @author kiriost
  */
-public class ArticuloDAO extends GenericDAO<Articulo> {
-    
-    public ArticuloDAO() {
-        super(Articulo.class);
-    }
-    
+public interface GenericDAO<T> {
+    public List<T> getAll();
+    public List<T> getByCodigo(Integer codigo);
 }

@@ -2,7 +2,7 @@
 
 <html>
     <head>
-        <title>Art&iacute;culos</title>
+        <title>Marcas</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -10,26 +10,18 @@
     <body>
     	<div class="container">
 	    	<table class="table table-stripped">
-	        	<caption>Art&iacute;culos</caption>
+	        	<caption>Marcas</caption>
 	            <thead>
 	                <th>C&oacute;digo</th>
 	                <th>Nombre</th>
-	                <th>Cantidad por Pallet</th>
-                        <th>Habilitado</th>
-                        <th>Tipo de Art&iacute;culo</th>
-                        <th>Marca</th>
 	            </thead>
 	            <tbody>
-	                {{#articulos}}
+	                {{#marcas}}
 	                <tr>
 	                    <td>{{codigo}}</td>
 	                    <td>{{nombre}}</td>
-	                    <td>{{cantidadPallet}}</td>
-                            <td>{{habilitar}}</td>
-                            <td>{{tipoArticulo.nombre}} ({{tipoArticulo.codigo}})</td>
-                            <td>{{marca.nombre}} ({{marca.codigo}})</td>
 	                </tr>
-	                {{/articulos}}
+	                {{/marcas}}
 	            </tbody>
 	        </table>
     	</div>      
